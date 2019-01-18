@@ -1,0 +1,87 @@
+html,body {height: 100%;overflow: hidden;background:#0e1325; }
+html { -webkit-font-smoothing: antialiased; }
+@-webkit-keyframes rotate-loading {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-loading {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+
+@-webkit-keyframes loading-text-opacity {
+    0%, 20% {
+        color:rgba(255,255,255,0)
+    }
+    50% {
+        color:rgba(255,255,255,1);
+    }
+    100% {
+        color:rgba(255,255,255,0)
+    }
+}
+
+@keyframes loading-text-opacity {
+    0%, 20% {
+        color:rgba(255,255,255,0)
+    }
+    50% {
+        color:rgba(255,255,255,1);
+    }
+    100% {
+        color:rgba(255,255,255,0)
+    }
+}
+.loading_container { position:absolute; top:50%; left:50%; margin:-50px 0 0 -50px; }
+.loading_container, .loading {
+    height: 100px;
+    position: relative;
+    width: 100px;
+    border-radius: 100%;
+}
+
+.loading {
+    border: 2px solid transparent;
+    border-color: transparent #fff transparent #FFF;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation: rotate-loading 1.5s linear 0s infinite normal;
+    animation: rotate-loading 1.5s linear 0s infinite normal;
+}
+
+.loading_container:hover .loading {
+    border-color: transparent #E45635 transparent #E45635;
+}
+
+.loading_container:hover .loading, .loading_container .loading {
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+#loading_text {
+    -webkit-animation:loading-text-opacity 2s linear 0s infinite normal;
+    animation:loading-text-opacity 2s linear 0s infinite normal;
+    color: rgba(255,255,255,1);
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 45px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    width: 100px;
+}

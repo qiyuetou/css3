@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <title>麦芒推广</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- S CSS temp -->
+    <link rel="stylesheet" href="css/gb.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- E CSS temp -->
+    <script>
+    ! function(a) {
+        function b() {
+            var b, c, e, i, f = a.document,
+                g = f.documentElement,
+                h = g.getBoundingClientRect().width;
+            b || c || (i = !!a.navigator.appVersion.match(/AppleWebKit.*Mobile.*/), b = a.devicePixelRatio, e = a.devicePixelRatio, b = i ? b : 1, c = 1 / b), g.style.fontSize = h >= 640 ? "40px" : 320 >= h ? "20px" : 20 * (h / 320) + "px"
+        }
+        a.addEventListener("resize", function() {
+            b()
+        }), b()
+    }(window);
+    </script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/halo.15.01.js"></script>
+</head>
+<!-- 注：加ontouchstart使css：active生效 -->
+<!-- http://jdc.jd.com/fd/pp/maimang/index.html  -->
+
+<body>
+    <div class="mod_container" style="display:none;">
+        <div class="music pause" id="music"></div>
+        <div class="wrap" id="wrap">
+            <div class="scene scene_home" id="scene_home">
+                <div class="home_star"><span class="star star1"></span><span class="star star2"></span><span class="star star3"></span><span class="star star4"></span><span class="star star5"></span><span class="star star6"></span></div>
+                <div class="home_welcome">
+                    <div>不做无益之事</div>
+                    <div class="home_welecome_comma">，</div>
+                    <div>何以遣有涯之生</div>
+                    <div class="home_welecome_question">?</div>
+                </div>
+            </div>
+            <div class="scene sceneselect" id="sceneselect">
+                <div class="sceneselect_window"></div>
+                <div class="sceneselect_shelf">
+                    <ul class="sceneselect_shelf_list">
+                        <li class="sceneselect_shelf_item">我懂这世界，你却不懂我</li>
+                        <li class="sceneselect_shelf_item">孤独之后是成长</li>
+                        <li class="sceneselect_shelf_item">旅行，发现生活之美</li>
+                        <li class="sceneselect_shelf_item">每本书都打开了一扇窗</li>
+                    </ul>
+                </div>
+                <div class="sceneselect_shelf_text">选择一本你喜欢的</div>
+            </div>
+            <div class="scene" id="scenebook" style="display:none;">
+                <!-- 生活秀 lifeshow -->
+                <!-- 文艺咖 literature -->
+                <!-- 政经类 polinance -->
+                <!-- 真学霸 professional -->
+                <!-- 箴言 -->
+                <div id="scenebook_main">
+                    <!-- 政经类 -->
+                    <div class="words pn_words">
+                        <div class="line line1 foldright"><span>创新 </span><span>不是从1到N </span><span>而是从0到1</span></div>
+                        <div class="line line2 foldright"><span>我懂这世界 </span><span>你却不懂我</span></div>
+                        <div class="line line3 foldright"><span>但请留下 </span><span>你的足迹在我的文字里</span></div>
+                        <div class="line line4 foldright"><span>向这个世界所有的 </span><span>庸常 媚俗 无趣 </span><span>开火</span></div>
+                    </div>
+                    <!-- 文艺咖 -->
+                    <div class="words lr_words">
+                        <div class="line line1 foldright"><span>你随意翻阅我命运的草稿 </span><span>肯定或否定都让人 <strong>心跳</strong></span></div>
+                        <div class="line line2 foldright"><span>向左跑 还是向右跑 </span><span>会跟怎样的自己 </span><span>怎样的风 <strong>撞个满怀</strong></span></div>
+                        <div class="line line3 foldright"><span>浪费了许多眼泪 许多年 </span><span>最后应该成就的是 </span><span>更好的你和一个 <strong>更好的人生</strong></span></div>
+                        <div class="line line4 foldright"><span>孤独之前是迷茫 </span><span>孤独之后是<strong>成长</strong></span></div>
+                    </div>
+                    <!-- 生活秀 -->
+                    <div class="words ls_words">
+                        <div class="line line1 foldright"><span>善良的人，</span><span>才是和世界摩擦最小的人，</span><span>才容易成为幸福的人</span></div>
+                        <div class="line line2 foldright"><span>生活之美，</span><span>在日复一日却乐此不疲，</span><span>总是透着灵魂的美丽</span></div>
+                        <div class="line line3 foldright"><span>在路上，</span><span>经历不一样的故事，</span><span>遇见不一样的人，</span><span>领略不一样的风景</span></div>
+                        <div class="line line4 foldright"><span>旅行，应是</span><span>生活这段锦上添的花</span></div>
+                    </div>
+                    <!-- 真学霸 -->
+                    <div class="words pf_words">
+                        <div class="line line1 foldright"><span>每一本书，都在我面前 </span><span>打开了一扇 <strong>窗户</strong></span></div>
+                        <div class="line line2 foldright"><span>成功的速度一定要超过 </span><span><strong>父母</strong> 老去的速度</span></div>
+                        <div class="line line3 foldright"><span>当我在直升飞机第一次看到黑洞时 </span><span>你不可能舒舒服服穿越35亿年前 </span><span>就产生了一种似曾相识的 <strong>感觉</strong></span></div>
+                        <div class="line line4 foldright"><span>在一个国王境内 </span><span>民选出来的议会和市长 </span><span>可以管理自己的市镇 </span><span>这是欧洲才有的 <strong>发明</strong></span></div>
+                    </div>
+                    <div class="book">
+                        <!-- 书页 -->
+                        <div class="book_wrap" id="bookblock">
+                            <div id="page0" class="page ini">
+                                <div class="side side_left">
+                                </div>
+                                <div class="side side_right">
+                                </div>
+                            </div>
+                            <div id="page1" class="page foldright">
+                                <div class="paper">
+                                    <div class="side side_left">
+                                        <span class="elem ls_eskew_sin_l pf_rise elem1_1_l"></span>
+                                        <span class="elem ls_eskew_l pn_eskew_l elem1_2_l"></span>
+                                        <span class="elem ls_eskew_l lr_float pn_eskew_sin_l elem1_3_l"></span>
+                                        <span class="elem ls_eskew_l pn_eskew_sin_l elem1_4_l"></span>
+                                        <span class="elem ls_eskew_l elem1_5_l"></span>
+                                        <span class="elem ls_eskew_l pn_eskew_sin_l elem1_6_l"><i></i><i></i><i></i></span>
+                                        <span class="elem ls_eskew_l elem1_7_l"></span>
+                                    </div>
+                                    <div class="side side_right">
+                                        <span class="elem lr_float pn_eskew_r pf_rise elem1_1_r"></span>
+                                        <span class="elem ls_eskew_sin_r pn_eskew_sin_r elem1_2_r"><i></i><i></i><i></i></span>
+                                        <span class="elem ls_eskew_r pn_eskew_sin_r elem1_3_r"></span>
+                                        <span class="elem ls_eskew_r elem1_4_r"></span>
+                                        <span class="elem ls_eskew_r elem1_5_r"></span>
+                                        <span class="elem ls_eskew_r pn_eskew_sin_r elem1_6_r"><i></i><i></i><i></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="page2" class="page foldright">
+                                <div class="paper">
+                                    <div class="side side_left">
+                                        <span class="elem ls_eskew_l pn_eskew_l elem2_1_l"></span>
+                                        <span class="elem ls_eskew_sin_l pn_eskew_l elem2_2_l"></span>
+                                        <span class="elem pn_eskew_sin_l elem2_3_l"></span>
+                                        <span class="elem pn_eskew_sin_l elem2_4_l"></span>
+                                        <span class="elem pn_eskew_sin_l elem2_5_l"></span>
+                                    </div>
+                                    <div class="side side_right">
+                                        <span class="elem pn_eskew_sin_r elem2_1_r"></span>
+                                        <span class="elem ls_eskew_sin_r pn_eskew_sin_r elem2_2_r"></span>
+                                        <span class="elem ls_eskew_r pn_eskew_r elem2_3_r"></span>
+                                        <span class="elem ls_eskew_sin_r pn_eskew_sin_r elem2_4_r"></span>
+                                        <span class="elem pn_eskew_sin_r elem2_5_r"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="page3" class="page foldright">
+                                <div class="paper">
+                                    <div class="side side_left">
+                                        <span class="elem ls_eskew_sin_l elem3_1_l"></span>
+                                        <span class="elem ls_eskew_l elem3_2_l"></span>
+                                        <span class="elem ls_eskew_sin_l elem3_3_l"></span>
+                                        <span class="elem ls_eskew_sin_l elem3_4_l"></span>
+                                    </div>
+                                    <div class="side side_right">
+                                        <span class="elem ls_eskew_sin_r elem3_1_r"></span>
+                                        <span class="elem ls_eskew_sin_r elem3_2_r"></span>
+                                        <span class="elem ls_eskew_r elem3_3_r"></span>
+                                        <span class="elem elem3_4_r"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="page4" class="page foldright">
+                                <div class="paper">
+                                    <div class="side side_left">
+                                        <span class="elem elem4_1_l"></span>
+                                        <span class="elem pf_pin elem4_2_l"></span>
+                                        <span class="elem pf_pin ls_eskew_sin_l pn_eskew_sin_l elem4_3_l"></span>
+                                        <span class="elem pn_eskew_sin_l elem4_4_l"></span>
+                                        <span class="elem pn_eskew_sin_l elem4_5_l"></span>
+                                        <span class="elem pn_eskew_l elem4_6_l"></span>
+                                    </div>
+                                    <div class="side side_right">
+                                        <span class="elem pn_eskew_r elem4_1_r"><span class="arm"></span><span class="bloods"><i></i><i></i><i></i><i></i></span></span>
+                                        <span class="elem pf_pin ls_eskew_sin_r pn_eskew_sin_r elem4_2_r"></span>
+                                        <span class="elem pf_pin pn_eskew_r elem4_3_r"><span class="arm"></span><span class="bloods"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+                                        <span class="elem pf_pin pn_eskew_r ls_eskew_sin_r elem4_4_r"><span class="bloods"><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div id="page5" class="page foldright">
+                                <div class="paper">
+                                    <div class="side side_left">
+                                    </div>
+                                    <div class="side side_right">
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- 背景 -->
+                    <div class="bg_elem">
+                        <div id="bg1" class="foldright"><span class="belem belem1"></span><span class="belem belem2"></span><span class="belem belem3"></span><span class="belem belem4"></span><span class="belem belem5"></span></div>
+                        <div id="bg2" class="foldright"><span class="belem belem1"></span><span class="belem belem2"></span><span class="belem belem3"></span><span class="belem belem4"></span><span class="belem belem5"></span></div>
+                        <div id="bg3" class="foldright"><span class="belem belem1"></span><span class="belem belem2"></span><span class="belem belem3"></span><span class="belem belem4"></span><span class="belem belem5"></span></div>
+                        <div id="bg4" class="foldright"><span class="belem belem1"></span><span class="belem belem2"></span><span class="belem belem3"></span><span class="belem belem4"></span><span class="belem belem5"></span></div>
+                        <span class="circle circle1"></span>
+                        <span class="circle circle2"></span>
+                        <span class="circle circle3"></span>
+                    </div>
+                    <div class="bg" id="scenebook_bg"></div>
+                </div>
+            </div>
+            <div class="scene" id="scenelast">
+                <div class="scenelast_star"></div>
+                <div class="scenelast_wrap">
+                    <div class="scenelast_info">
+                        <div class="scenelast_logo"><img class="scenelast_logo_img" src="img/logo.png" alt="" width="141" height="141"></div>
+                        <h4 class="scenelast_h4">在麦芒，大家都在看</h4>
+                        <h5 class="scenelast_h5">拍拍麦芒—爱书人的圈子更多精彩等你发现</h5>
+                    </div>
+                    <div class="scenelast_bookshelf sb_pn">
+                        <ul>
+                            <li class="scenelast_bookshelf_item">
+                                <a href="http://www.paipai.com/m2/maimang/commodity.html?id=288511852319589550"><img src="img/book/zero_to_one.jpg" alt="从0到1开启商业与未来的秘密" width="364" height="562"></a>
+                            </li>
+                            <li class="scenelast_bookshelf_item">
+                                <a href="http://www.paipai.com/m2/maimang/commodity.html?ptag=20547.9.1&id=288511852227196010"><img src="img/book/deng.jpg" alt="邓小平时代" width="364" height="562"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scenelast_bookshelf sb_lr">
+                        <ul>
+                            <li class="scenelast_bookshelf_item">
+                                <a href="http://www.paipai.com/m2/maimang/commodity.html?ptag=20547.9.1&id=288511852272606465"><img src="img/book/solidad.jpg" alt="百年孤独" width="364" height="562"></a>
+                            </li>
+                            <li class="scenelast_bookshelf_item">
+                                <a href="http://www.paipai.com/m2/maimang/commodity.html?ptag=20547.9.1&id=288511852272489215"><img src="img/book/alone.jpg" alt="一个人的朝圣" width="364" height="562"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scenelast_bookshelf sb_ls">
+                        <ul>
+                            <li class="scenelast_bookshelf_item">
+                                <a href="http://www.paipai.com/m2/maimang/commodity.html?ptag=20547.9.1&id=288511852321267638"><img src="img/book/dont_quit.jpg" alt="不辞职，去旅行" width="364" height="562"></a>
+                            </li>
+                            <li class="scenelast_bookshelf_item">
+                                <a href="http://www.paipai.com/m2/maimang/commodity.html?ptag=20547.9.1&id=288511852364492650"><img src="img/book/life_is_a_journey.jpg" alt="以自己喜欢的方式过一生" width="364" height="562"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scenelast_bookshelf sb_pf">
+                        <ul>
+                            <li class="scenelast_bookshelf_item">
+                                <a href="http://www.paipai.com/m2/maimang/commodity.html?ptag=20547.9.1&id=288511852223396044"><img src="img/book/bbc.jpg" alt="BBC科普三部曲" width="364" height="562"></a>
+                            </li>
+                            <li class="scenelast_bookshelf_item">
+                                <a href="http://www.paipai.com/m2/maimang/commodity.html?ptag=20547.9.1&id=288511852259837224"><img src="img/book/big_data.jpg" alt="大数据时代" width="364" height="562"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scenelast_command">
+                        <a href="http://www.paipai.com/m2/maimang/feeds.html?ptag=20547.4.11" class="scenelast_command_btn1">进入我的读书世界</a>
+                        <a href="#" class="scenelast_command_btn2">再看一次</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- S Scripts temp -->
+    <script type="text/javascript" src="js/book.js"></script>
+    <!-- E Scripts temp -->
+</body>
+
+</html>

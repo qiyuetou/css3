@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>正方形</title>
+    <style>
+        *{
+            margin : 0;
+            padding : 0;
+        }
+
+        data{
+            perspective:1000px;
+        }
+        header{
+            width:100px;
+            height:100px;
+            margin:100px 0 0 100px;
+
+
+            text-align: center;
+            line-height:100px;
+            font-size:30px;
+            transform-style: preserve-3d;
+            transition:transform 2s;
+
+        }
+        .square{
+            width:100px;
+            height:100px;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .face{
+            background: red;
+            opacity: 0.8;
+            transform: rotateY(180deg) translateZ(-50px);
+
+        }
+        .back{
+            background: #bcd9ff;
+            transform:rotateY(0deg) translateZ(-50px)
+
+        }
+        .left{
+            background: #f7c6c6;
+            transform:rotateY(90deg) translateZ(-50px);
+        }
+        .right{
+            background: #a00;
+            transform:rotateY(-90deg) translateZ(-50px);
+        }
+        .top{
+            background: #015809;
+            transform:rotateX(-90deg) translateZ(-50px);
+        }
+        .bottom{
+            background: #42d2a0;
+            transform:rotateX(90deg) translateZ(-50px);
+
+        }
+        header:hover{
+            transform: rotate3d(0,2,0,130deg);
+
+        }
+
+
+        section{
+            width:400px;
+            height:250px;
+            position: relative;
+            perspective-style:preserve-3d;
+            perspective: 400px;
+        }
+        .book{
+            width:400px;
+            height:250px;
+            position: absolute;
+            top:0;
+            left:0;
+            perspective: 1400px;
+            transform-origin: bottom center;
+            transform:rotateX(90deg) translateZ(-100px);
+        }
+        button{
+            width:50px;
+            height:50px;
+        }
+        .page{
+            position: absolute;
+            top:0;
+            left:50%;
+            width:200px;
+            height:250px;
+            transform-origin: left center;
+            transform-style:preserve-3d;
+            transition:all ease 1s;
+        }
+        .page-turn{
+            transform: rotateY(-180deg);
+        }
+        .page-same{
+            position: absolute;
+            top:0px;
+            left:0px;
+            width:100%;
+            height:100%;
+            text-align: center;
+            line-height: 250px;
+
+        }
+        .page-face{
+            background: #000;
+            backface-visibility: visible;
+        }
+        .page-back{
+            background: red;
+            transform:rotateY(180deg);
+            backface-visibility: visible;
+        }
+
+
+    </style>
+</head>
+<body>
+<data>
+    <header>
+        <div class="square face">1</div>
+        <div class="square back">2</div>
+        <div class="square left">3</div>
+        <div class="square right">4</div>
+        <div class="square top">5</div>
+        <div class="square bottom">6</div>
+    </header>
+</data>
+
+<section>
+    <div class="book">
+        <div id="page-1" class="page">
+            <div class="page-same page-face">cover</div>
+            <div class="page-same page-back">1</div>
+        </div>
+        <div id="page-2" class="page">
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+    </div>
+</section>
+<button id="button">翻书</button>
+
+</body>
+<script>
+    window.onload = function(){
+        var btn = document.getElementById('button');
+        var page1 = document.getElementById('page-1');
+        var isFace = true;
+        btn.addEventListener('click',function(){
+            if(isFace){
+                page1.setAttribute('class', 'page page-turn');
+
+            }else{
+                page1.setAttribute('class', 'page');
+            }
+            isFace = !isFace;
+        })
+    }
+    //例子  http://lyxuncle.github.io/pageturning/demo
+</script>
+
+</html>

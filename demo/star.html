@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>demo</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .home_star {
+            height:6.43rem;
+            background:#000 url("./assets/home_star.png") no-repeat center top;
+            background-size:100% auto;
+            opacity:1;
+        }
+        .home_star .star{
+            width:0.4rem;
+            height:0.5rem;
+            background-image:url("./assets/star.png");
+            background-repeat:no-repeat;
+            background-size:100% auto;
+            position:absolute;
+            left:50%;
+        }
+        .home_star .star1{top:5.9rem;margin-left:-3.5rem;}
+        .home_star .star2{top:3.2rem;margin-left:-4.25rem;}
+        .home_star .star3{top:2rem;margin-left:3.7rem;}
+        .home_star .star4{top:4.6rem;margin-left:6.5rem;}
+        .home_star .star5{top:3.7rem;margin-left:5.8rem;}
+        .home_star .star6{top:2.4rem;margin-left:-0.3rem;}
+
+        .home_star .star{
+            -webkit-animation:star 2s 0.1s infinite alternate;
+            animation:star 2s 0.1s infinite alternate;
+        }
+        .home_star .star1{-webkit-animation-delay:0.1s;animation-delay:0.1s;}
+        .home_star .star2{-webkit-animation-delay:2s;animation-delay:2s;}
+        .home_star .star3{-webkit-animation-delay:1s;animation-delay:1s;}
+        .home_star .star4{-webkit-animation-delay:3s;animation-delay:3s;}
+        .home_star .star5{-webkit-animation-delay:4s;animation-delay:4s;}
+        .home_star .star6{-webkit-animation-delay:4.8s;animation-delay:4.8s;}
+        @keyframes star {
+            0% { transform:scale(1); }
+            100% { transform:scale(0.5);opacity:0.2; }
+        }
+
+        .font-change{
+            width:100%;
+            height:2rem;
+            margin-top:2rem;
+            padding-top:0.5rem;
+            background: #000;
+            position: relative;
+        }
+        .font-change .text{
+            position: absolute;
+            left:50%;
+            text-align: center;
+            line-height:2rem;
+            font-size:0.5rem;
+            color: #fff;
+            transform:translateX(-50%);
+        }
+        .font-change .text:after{
+            width:300%;
+            height:100%;
+            content:"";
+            position: absolute;
+            top:0;
+            left:0;
+            background: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(15,20,40, 0.7)), color-stop(0.4, rgba(15,20,40, 0.7)), color-stop(0.5, rgba(15,20,40, 0)), color-stop(0.6, rgba(15,20,40, 0.7)), color-stop(1, rgba(15,20,40, 0.7)));
+            animation:slide ease-in-out 2s 1;
+
+        }
+        @keyframes slide{
+             0%{-webkit-transform:translateX(-66.666%);}
+             100%{-webkit-transform:translateX(0);}
+         }
+    </style>
+</head>
+<body>
+<div class="home_star">
+    <span class="star star1"></span><span class="star star2"></span>
+    <span class="star star3"></span><span class="star star4"></span>
+    <span class="star star5"></span><span class="star star6"></span>
+</div>
+
+<div class="font-change">
+    <div class="text">选择一本你喜欢的</div>
+</div>
+</body>
+</html>
